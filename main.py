@@ -45,9 +45,10 @@ passos = 0
 while True:
 
     print("TURNO DO JOGADOR", listaJogadores[jogadoAtual])
+    print()
     # Como são 3 dados a ser retirados, cria-se um for com condição 3.
-    inicio = input("Pressione enter para jogar os dados:")
-
+    pegarDados = input("Pressione ENTER para pegar 3 dados sorteados.")
+    print()
     for i in range(0, 3, 1):
         # Sorteando um número de 0 a 11. 12 possibilidades no total.
         numSorteado = random.randrange(0, 12)
@@ -61,7 +62,9 @@ while True:
             corDado = "VERMELHO"
         print("Dado sorteado: ", corDado)
         dadosSorteados.append(dadosSorteado)
-
+    print()
+    jogarDados = input("Pressione ENTER para jogar os 3 dados.")
+    print()
     print("As faces sorteadas foram: ")
 
     for dadosSorteado in dadosSorteados:
@@ -77,13 +80,13 @@ while True:
         else:
             print("- PASSOS (Uma vítima escapou)")
             passos += 1
-
+    print()
     print("SCORE ATUAL: ")
     print("CÉREBROS: ", cerebros)
     print("TIROS: ", tiros)
     print("PASSOS: ", passos)
-
-    continuarTurno = input("Aviso: Você deseja continuar jogando dados? (s=sim / n=não)")
+    print()
+    continuarTurno = input("Aviso: Você deseja continuar jogando dados? (s=sim / n=não): ")
 
     if continuarTurno == "n":
 
@@ -93,7 +96,7 @@ while True:
         cerebros = 0
         passos = 0
 
-        if jogadoAtual == listaJogadores[2]:
+        if jogadoAtual == listaJogadores.__len__():
             print("Finalizando protótipo do jogo...")
             break
     else:
